@@ -16,8 +16,8 @@ const {data: note, isLoading, isError} =useQuery<Note, Error>({
 	refetchOnMount: false,
 });
 
-if (isLoading) return <p>Loading, please wait...</p>
-if (isError|| !note) return <p>Something went wrong. Could not upload details</p>;
+if (isLoading) return <p className={css.text}>Loading, please wait...</p>
+if (isError|| !note) return <p className={css.text}> Something went wrong. Could not upload details</p>;
 
 return(
 <div className={css.container}>

@@ -9,6 +9,3 @@ export interface Note {
   updatedAt: string;
 }
 
- export interface FetchNotesResponse {
-  notes: Note[];
-  totalPages: number;}

@@ -38,8 +38,8 @@ export default function NotesClient({ perPage }: NotesClientProps) {
   const notes = data?.notes ?? [];
   const totalPages = data?.totalPages ?? 1;
 
-  if (isLoading) return <p>Loading, please wait... </p>;
-  if (isError) return <p>Could not fetch the list of notes. Plese, try to refresh the page...</p>
+  if (isLoading) return <p className={css.text}>  Loading, please wait... </p>;
+  if (isError) return <p className={css.text} >Could not fetch the list of notes. Plese, try to refresh the page...</p>
     ;
 
   return (
