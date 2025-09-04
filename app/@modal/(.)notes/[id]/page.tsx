@@ -25,7 +25,6 @@ export default async function NoteDetailsPage({ params }: NoteDetailsPageProps) 
   return (
     <div>
       <HydrationBoundary state={dehydrate(queryClient)}>
-        
         <NotePreviewClient />
       </HydrationBoundary>
     </div>

@@ -7,8 +7,6 @@ import css from './NotePreview.module.css'
 import Modal from "@/components/Modal/Modal";
 import type { Note } from "@/types/note";
 
- 
-
 export default function NotePreviewClient(){
 
     const { id } = useParams<{ id: string }>();
@@ -22,7 +20,7 @@ export default function NotePreviewClient(){
   const router = useRouter();
 
   if (isLoading) return <p className={css.text}>Loading, please wait...</p>
-if (isError|| !note) return <p className={css.text}> Something went wrong. Could not upload details</p>;
+if (isError|| !note) return <p className={css.text}> Something went wrong. Could not upload details.</p>;
 
 
   return (<Modal onClose={() => {router.back()}}>
