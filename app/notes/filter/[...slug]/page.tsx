@@ -1,6 +1,3 @@
-// 
-
-
 import css from "./notesPage.module.css";
 import NoteListClient from "./Notes.client";
 import { QueryClient, HydrationBoundary, dehydrate } from "@tanstack/react-query";
