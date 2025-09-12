@@ -1,13 +1,30 @@
-// Zustand-стор з наступними функціями:
 
-//draft: об’єкт, що містить тимчасові дані форми нотатки (title, content, tag).
-// setDraft(note): функція для оновлення полів чернетки.
-// clearDraft(): функція для очищення чернетки до початкового стану. У якості початкового стану використовуйте наступний об’єкт
+import {create} from 'zustand';
+import {persist} from 'zustand/middleware';
+import { CreateNoteParams } from './api';
 
-import { create } from 'zustand';
 
-const initialDraft = {
+type NoteDraft = {
+    draft: CreateNoteParams;
+    setDraft: (draft: CreateNoteParams) => void;
+    clearDraft: () => void;
+}
+const initialDraft: CreateNoteParams = {
   title: '',
   content: '',
   tag: 'Todo',
 };
+
+export const useNoteDraft = create<NoteDraft>()(persist(
+    (set) => ({
+        draft: initialDraft,
+        setDraft: (draft) => set({ draft }),
+        clearDraft: () => set({ draft: initialDraft }),
+    }),
+    {
+        name: 'note-draft',
+        partialize: (state) => ({ draft: state.draft }),
+    }
+));
+ 
+ 
