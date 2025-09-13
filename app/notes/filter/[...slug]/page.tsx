@@ -16,12 +16,12 @@ export async function generateMetadata({ params }: Props) {
   
   const title = `Notes filtered by: ${tag}`;
   const description = `Review of notes filtered by "${tag}".`;
-  const url = `https://your-domain.com/notes/filter/${slug[0]}`;
+  const url = `https://08-zustand-three-jet.vercel.app/notes/filter/${slug[0]}`;
 
   return {
     title,
     description,
-    openGraph: {
+    openGraph: { 
       title,
       description,
       url,

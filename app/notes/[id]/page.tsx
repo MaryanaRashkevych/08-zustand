@@ -1,8 +1,9 @@
 import { fetchNoteById } from "@/lib/api";
 import { QueryClient, HydrationBoundary, dehydrate } from "@tanstack/react-query";
 import NoteDetailsClient from "./NoteDetails.client";
+import { Metadata } from "next";
  
-export async function generateMetadata ({params}:{params:{id: string}}){
+export async function generateMetadata ({params}:{params:{id: string}}): Promise<Metadata> {
   const { id } = await params;
   const note = await fetchNoteById(id);
  if (!note) {
@@ -52,3 +53,4 @@ export default async function NoteDetailsPage({ params }: NoteDetailsPageProps) 
     </div>
   );
 }
+
